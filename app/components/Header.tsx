@@ -19,9 +19,9 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
-            <Link href="/docs" className="text-sm font-medium text-gray-600 hover:text-gray-900 transition">
+            <a href="https://docs.walletgate.app" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-gray-600 hover:text-gray-900 transition">
               Docs
-            </Link>
+            </a>
             <a href="https://github.com/walletgate/eudi-sdk" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-gray-600 hover:text-gray-900 transition">
               GitHub
             </a>
@@ -52,13 +52,15 @@ export default function Header() {
         {/* Mobile Navigation Menu */}
         {mobileMenuOpen && (
           <nav className="md:hidden pt-4 pb-2 border-t border-gray-100 mt-4 space-y-2">
-            <Link
-              href="/docs"
+            <a
+              href="https://docs.walletgate.app"
+              target="_blank"
+              rel="noopener noreferrer"
               className="block py-2 text-sm font-medium text-gray-600 hover:text-gray-900 transition"
               onClick={() => setMobileMenuOpen(false)}
             >
               Docs
-            </Link>
+            </a>
             <a
               href="https://github.com/walletgate/eudi-sdk"
               target="_blank"

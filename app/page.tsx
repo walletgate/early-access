@@ -176,15 +176,17 @@ export default function Home() {
 
               {/* CTA to Docs */}
               <div className="pt-4">
-                <Link
-                  href="/docs"
+                <a
+                  href="https://docs.walletgate.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center space-x-2 text-brand-600 font-medium hover:text-brand-700 transition"
                 >
                   <span>Explore the SDK documentation</span>
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
-                </Link>
+                </a>
               </div>
             </div>
 
