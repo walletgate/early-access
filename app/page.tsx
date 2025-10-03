@@ -7,6 +7,7 @@ import Header from './components/Header'
 export default function Home() {
   const [formState, setFormState] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
   const [formData, setFormData] = useState({ name: '', email: '' })
+  const [openFaq, setOpenFaq] = useState<number | null>(null)
 
   const handleSubmit = async (e: React.FormEvent): Promise<void> => {
     e.preventDefault()
@@ -54,12 +55,12 @@ export default function Home() {
             {/* Left Column - Content */}
             <div className="space-y-6 sm:space-y-8">
               <div className="space-y-4">
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight lg:whitespace-nowrap">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
                   EU Digital Identity,{' '}
                   <span className="text-brand-600">made simple.</span>
                 </h1>
-                <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed lg:whitespace-nowrap">
-                  WalletGate is a developer-first SDK for privacy-preserving EUDI verification.
+                <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed">
+                  Developer-first REST API and TypeScript SDK for privacy-preserving EUDI verification.
                 </p>
               </div>
 
@@ -318,6 +319,76 @@ export default function Home() {
         </div>
       </main>
 
+      {/* FAQ Section */}
+      <section className="w-full py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 text-gray-900">
+            Frequently Asked Questions
+          </h2>
+
+          <div className="space-y-4">
+            {[
+              {
+                q: "What is EUDI Wallet verification?",
+                a: "EUDI (EU Digital Identity) Wallet verification allows users to prove their identity, age, or residency using their official EU Digital Identity Wallet. It's part of the eIDAS 2.0 regulation being rolled out across all EU member states."
+              },
+              {
+                q: "How do I integrate WalletGate?",
+                a: "WalletGate provides both a REST API and TypeScript SDK. You can start verifying identities with just a few lines of code. Check our documentation at docs.walletgate.app for detailed integration guides."
+              },
+              {
+                q: "What's the difference between test and live mode?",
+                a: "Test mode uses test API keys (starting with wg_test_) and doesn't charge you. It's perfect for development and testing. Live mode (wg_live_) processes real verifications and counts towards your plan's quota."
+              },
+              {
+                q: "Which countries are supported?",
+                a: "WalletGate supports all 27 EU member states plus EEA countries. We directly integrate with the official EU LOTL (List of Trusted Lists) infrastructure for maximum coverage and compliance."
+              },
+              {
+                q: "Is there a free trial?",
+                a: "Yes! You get 100 free test verifications per month with no credit card required. This gives you plenty of time to integrate and test before going live."
+              },
+              {
+                q: "How secure is WalletGate?",
+                a: "WalletGate is built with enterprise security in mind: end-to-end encryption, zero-knowledge architecture, SOC 2 Type II certification, and full GDPR compliance. We never store user identity data."
+              }
+            ].map((faq, index) => (
+              <div key={index} className="border border-gray-200 rounded-lg bg-white overflow-hidden">
+                <button
+                  onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                  className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors"
+                >
+                  <span className="font-semibold text-gray-900 pr-4">{faq.q}</span>
+                  <svg
+                    className={`w-5 h-5 text-gray-500 transition-transform flex-shrink-0 ${openFaq === index ? 'rotate-180' : ''}`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                {openFaq === index && (
+                  <div className="px-6 pb-4 text-gray-600 leading-relaxed">
+                    {faq.a}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-12 text-center">
+            <p className="text-gray-600 mb-4">Still have questions?</p>
+            <a
+              href="mailto:hello@walletgate.app"
+              className="text-indigo-600 hover:text-indigo-700 font-semibold"
+            >
+              Contact us →
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="w-full py-8 px-4 sm:px-6 lg:px-8 border-t border-gray-100">
         <div className="max-w-7xl mx-auto">
@@ -327,6 +398,14 @@ export default function Home() {
             </p>
             <nav className="flex items-center space-x-6">
               <a
+                href="https://docs.walletgate.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-gray-600 hover:text-gray-900 transition"
+              >
+                Docs
+              </a>
+              <a
                 href="https://github.com/walletgate/eudi-sdk"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -334,9 +413,14 @@ export default function Home() {
               >
                 GitHub
               </a>
-              <Link href="/docs" className="text-sm text-gray-600 hover:text-gray-900 transition">
-                Docs
-              </Link>
+              <a
+                href="https://www.npmjs.com/package/@walletgate/eudi"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-gray-600 hover:text-gray-900 transition"
+              >
+                npm
+              </a>
               <Link href="/privacy" className="text-sm text-gray-600 hover:text-gray-900 transition">
                 Privacy
               </Link>
