@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
+
 import Header from './components/Header'
 
 export default function Home() {
@@ -51,15 +52,15 @@ export default function Home() {
       {/* Main Content */}
       <main className="flex-1 flex items-start justify-center px-4 sm:px-6 lg:px-8 pt-2 sm:pt-4 lg:pt-6 pb-8">
         <div className="max-w-6xl mx-auto w-full">
-          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
             {/* Left Column - Content */}
             <div className="space-y-6 sm:space-y-8">
               <div className="space-y-4">
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight whitespace-normal md:whitespace-nowrap">
                   EU Digital Identity,{' '}
                   <span className="text-brand-600">made simple.</span>
                 </h1>
-                <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed">
+                <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed whitespace-normal md:whitespace-nowrap">
                   Developer-first REST API and TypeScript SDK for privacy-preserving EUDI verification.
                 </p>
               </div>
@@ -103,7 +104,7 @@ export default function Home() {
                     </div>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-4">
+                  <form onSubmit={(e) => { void handleSubmit(e); }} className="space-y-4">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
                         Name
@@ -191,7 +192,7 @@ export default function Home() {
             </div>
 
             {/* Right Column - Animation */}
-            <div className="hidden md:flex items-center justify-center">
+            <div className="hidden md:flex items-center justify-center md:self-center md:mt-0 lg:mt-0">
               <div className="w-full max-w-lg h-80 lg:h-96 relative">
                 {/* Modern 3D-style animated illustration */}
                 <div className="w-full h-full flex items-center justify-center relative">
@@ -353,6 +354,10 @@ export default function Home() {
               {
                 q: "How secure is WalletGate?",
                 a: "WalletGate is built with enterprise security in mind: end-to-end encryption, zero-knowledge architecture, SOC 2 Type II certification, and full GDPR compliance. We never store user identity data."
+              },
+              {
+                q: "Do you offer AI-powered fraud detection?",
+                a: "Yes! WalletGate includes AI-powered anomaly detection with 5 ML algorithms monitoring 24/7 for velocity attacks, geographic anomalies, bot traffic, credential sharing, and suspicious patterns. Each verification gets an AI risk score with automated response recommendations."
               }
             ].map((faq, index) => (
               <div key={index} className="border border-gray-200 rounded-lg bg-white overflow-hidden">
