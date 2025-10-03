@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
+
 import Header from './components/Header'
 
 export default function Home() {
@@ -49,17 +50,17 @@ export default function Home() {
       <Header />
 
       {/* Main Content */}
-      <main className="flex-1 flex items-start justify-center px-4 sm:px-6 lg:px-8 pt-2 sm:pt-4 lg:pt-6 pb-8">
-        <div className="max-w-6xl mx-auto w-full">
-          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+      <main className="flex-1 flex items-start justify-center pt-2 sm:pt-4 lg:pt-6 pb-8">
+        <div className="max-w-6xl mx-auto w-full px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
             {/* Left Column - Content */}
             <div className="space-y-6 sm:space-y-8">
               <div className="space-y-4">
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight whitespace-normal md:whitespace-nowrap">
                   EU Digital Identity,{' '}
                   <span className="text-brand-600">made simple.</span>
                 </h1>
-                <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed">
+                <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed whitespace-normal md:whitespace-nowrap">
                   Developer-first REST API and TypeScript SDK for privacy-preserving EUDI verification.
                 </p>
               </div>
@@ -89,7 +90,7 @@ export default function Home() {
               </div>
 
               {/* Email Form */}
-              <div className="bg-gray-50 rounded-2xl p-6 sm:p-8 border border-gray-100">
+              <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-200 shadow-sm">
                 <h2 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-2">Be first to know</h2>
                 <p className="text-sm sm:text-base text-gray-600 mb-6">Get early access and updates on our launch.</p>
 
@@ -103,7 +104,7 @@ export default function Home() {
                     </div>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-4">
+                  <form onSubmit={(e) => { void handleSubmit(e); }} className="space-y-4">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
                         Name
@@ -115,7 +116,7 @@ export default function Home() {
                         required
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-transparent transition"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-600 focus:border-transparent transition"
                         placeholder="John Doe"
                         autoComplete="name"
                       />
@@ -131,7 +132,7 @@ export default function Home() {
                         required
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-transparent transition"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-600 focus:border-transparent transition"
                         placeholder="john@company.com"
                         autoComplete="email"
                       />
@@ -153,7 +154,7 @@ export default function Home() {
                         type="checkbox"
                         name="consent"
                         required
-                        className="mt-1 w-4 h-4 text-brand-600 border-gray-300 rounded focus:ring-brand-500"
+                        className="mt-1 w-4 h-4 text-brand-600 border-gray-300 rounded focus:ring-brand-600"
                       />
                       <span className="text-gray-600">
                         I agree to be contacted about WalletGate updates. No spam—one or two emails max.
@@ -191,7 +192,7 @@ export default function Home() {
             </div>
 
             {/* Right Column - Animation */}
-            <div className="hidden md:flex items-center justify-center">
+            <div className="hidden md:flex items-center justify-center md:self-center md:mt-0 lg:mt-0">
               <div className="w-full max-w-lg h-80 lg:h-96 relative">
                 {/* Modern 3D-style animated illustration */}
                 <div className="w-full h-full flex items-center justify-center relative">
@@ -353,6 +354,10 @@ export default function Home() {
               {
                 q: "How secure is WalletGate?",
                 a: "WalletGate is built with enterprise security in mind: end-to-end encryption, zero-knowledge architecture, SOC 2 Type II certification, and full GDPR compliance. We never store user identity data."
+              },
+              {
+                q: "Do you offer AI-powered fraud detection?",
+                a: "Yes! WalletGate includes AI-powered anomaly detection with 5 ML algorithms monitoring 24/7 for velocity attacks, geographic anomalies, bot traffic, credential sharing, and suspicious patterns. Each verification gets an AI risk score with automated response recommendations."
               }
             ].map((faq, index) => (
               <div key={index} className="border border-gray-200 rounded-lg bg-white overflow-hidden">
@@ -383,7 +388,7 @@ export default function Home() {
             <p className="text-gray-600 mb-4">Still have questions?</p>
             <a
               href="mailto:hello@walletgate.app"
-              className="text-indigo-600 hover:text-indigo-700 font-semibold"
+              className="text-brand-600 hover:text-brand-700 font-semibold"
             >
               Contact us →
             </a>

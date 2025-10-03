@@ -1,18 +1,51 @@
 @import "tailwindcss";
 
+/* Brand + typography tokens */
 @theme {
-  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+  /* Fonts: prefer TT Norms for body, PT Serif for headings */
+  --font-sans: "TT Norms", var(--font-inter), system-ui, -apple-system, sans-serif;
 
-  --color-brand-50: #faf5ff;
-  --color-brand-100: #f3e8ff;
-  --color-brand-200: #e9d5ff;
-  --color-brand-500: #a855f7;
-  --color-brand-600: #9333ea;
-  --color-brand-700: #7e22ce;
+  /* Stripe-like brand palette */
+  --color-brand-50: #f5f3ff;
+  --color-brand-100: #ddd8ff;
+  --color-brand-200: #c7c0ff;
+  --color-brand-500: #635bff;
+  --color-brand-600: #635bff;
+  --color-brand-700: #4f3df6;
 
   --animate-float: float 3s ease-in-out infinite;
   --animate-pulse-slow: pulse-slow 2s ease-in-out infinite;
   --animate-draw: draw 2s ease-in-out infinite;
+}
+
+/* Font faces (remote) */
+@font-face {
+  font-family: 'PT Serif';
+  src: url('https://a.hypofriend.de/fonts/fonts/PTSerif-bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'TT Norms';
+  src: url('https://a.hypofriend.de/fonts/fonts/woff2/TT_Norms_Pro_Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'TT Norms';
+  src: url('https://a.hypofriend.de/fonts/fonts/woff2/TT_Norms_Pro_Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'TT Norms';
+  src: url('https://a.hypofriend.de/fonts/fonts/woff2/TT_Norms_Pro_Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }
 
 @keyframes float {
@@ -132,9 +165,9 @@
 }
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 255, 255, 255;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-rgb: 13, 50, 77; /* #0d324d */
+  --background-start-rgb: 248, 250, 252; /* slate-50 */
+  --background-end-rgb: 245, 243, 255; /* brand-50 */
 }
 
 body {
@@ -146,3 +179,16 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+/* Headings use PT Serif; inherit color unless explicitly overridden */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'PT Serif', serif;
+}
+
+/* Links default to brand color */
+a { color: var(--color-brand-600); }
+a:hover { color: var(--color-brand-700); }
+
+/* Ensure solid brand buttons render white label/icon */
+.bg-brand-600, .from-brand-600 { color: #ffffff; }
+.bg-brand-600 svg { color: inherit; stroke: currentColor; }
