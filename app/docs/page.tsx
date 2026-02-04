@@ -1,8 +1,8 @@
 'use client'
 
 import Link from 'next/link'
-import Header from '../components/Header'
 import { useState } from 'react'
+import Header from '../components/Header'
 
 const sections = [
   { id: 'getting-started', title: 'Getting Started', icon: '🚀' },
