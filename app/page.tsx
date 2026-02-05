@@ -52,7 +52,7 @@ export default function Home() {
       {/* Main Content */}
       <main className="flex-1 flex items-start justify-center pt-2 sm:pt-4 lg:pt-6 pb-8">
         <div className="max-w-6xl mx-auto w-full px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-stretch">
             {/* Left Column - Content */}
             <div className="space-y-6 sm:space-y-8">
               <div className="space-y-4">
@@ -191,131 +191,25 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right Column - Animation */}
-            <div className="hidden md:flex items-center justify-center md:self-center md:mt-0 lg:mt-0">
-              <div className="w-full max-w-lg h-80 lg:h-96 relative">
-                {/* Modern 3D-style animated illustration */}
-                <div className="w-full h-full flex items-center justify-center relative">
-                  {/* Floating background shapes */}
-                  <div className="absolute inset-0 overflow-hidden">
-                    <div className="absolute top-10 left-10 w-20 h-20 bg-purple-100 rounded-full opacity-40 animate-float-slow"></div>
-                    <div className="absolute bottom-20 right-16 w-16 h-16 bg-purple-200 rounded-full opacity-30 animate-float-delay"></div>
-                    <div className="absolute top-32 right-24 w-12 h-12 bg-purple-50 rounded-full opacity-50 animate-float"></div>
-                  </div>
-
-                  {/* Main illustration */}
-                  <div className="relative z-10">
-                    <svg
-                      width="360"
-                      height="360"
-                      viewBox="0 0 360 360"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="drop-shadow-2xl"
-                    >
-                      <defs>
-                        <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                          <stop offset="0%" style={{ stopColor: '#a855f7', stopOpacity: 1 }} />
-                          <stop offset="100%" style={{ stopColor: '#9333ea', stopOpacity: 1 }} />
-                        </linearGradient>
-                        <linearGradient id="lockGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                          <stop offset="0%" style={{ stopColor: '#ffffff', stopOpacity: 1 }} />
-                          <stop offset="100%" style={{ stopColor: '#f3e8ff', stopOpacity: 1 }} />
-                        </linearGradient>
-                        <filter id="glow">
-                          <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
-                          <feMerge>
-                            <feMergeNode in="coloredBlur"/>
-                            <feMergeNode in="SourceGraphic"/>
-                          </feMerge>
-                        </filter>
-                      </defs>
-
-                      {/* Outer ring */}
-                      <circle
-                        cx="180"
-                        cy="180"
-                        r="140"
-                        fill="none"
-                        stroke="#f3e8ff"
-                        strokeWidth="2"
-                        opacity="0.3"
-                        className="animate-spin-slow"
-                        strokeDasharray="10 20"
-                      />
-
-                      {/* Glow circle */}
-                      <circle cx="180" cy="180" r="130" fill="#e9d5ff" opacity="0.1" className="animate-pulse-slow" />
-
-                      {/* Main shield with gradient */}
-                      <g className="animate-float">
-                        <path
-                          d="M180 60 L100 95 L100 180 C100 235 180 290 180 290 C180 290 260 235 260 180 L260 95 L180 60Z"
-                          fill="url(#shieldGrad)"
-                          filter="url(#glow)"
-                        />
-                        {/* Shield shine effect */}
-                        <path
-                          d="M180 60 L110 90 L110 180 C110 220 160 260 180 280 L180 60Z"
-                          fill="white"
-                          opacity="0.1"
-                        />
-                        {/* Shield border */}
-                        <path
-                          d="M180 60 L100 95 L100 180 C100 235 180 290 180 290 C180 290 260 235 260 180 L260 95 L180 60Z"
-                          stroke="#7e22ce"
-                          strokeWidth="4"
-                          fill="none"
-                          strokeLinejoin="round"
-                        />
-                      </g>
-
-                      {/* Lock icon */}
-                      <g className="animate-float-delay">
-                        {/* Lock body */}
-                        <rect
-                          x="155"
-                          y="175"
-                          width="50"
-                          height="45"
-                          rx="8"
-                          fill="url(#lockGrad)"
-                          stroke="#7e22ce"
-                          strokeWidth="3"
-                        />
-                        {/* Lock shackle */}
-                        <path
-                          d="M165 175 L165 160 C165 151 172 144 180 144 C188 144 195 151 195 160 L195 175"
-                          stroke="url(#lockGrad)"
-                          strokeWidth="6"
-                          fill="none"
-                          strokeLinecap="round"
-                        />
-                        {/* Keyhole */}
-                        <circle cx="180" cy="195" r="5" fill="#9333ea" />
-                        <rect x="177" y="195" width="6" height="12" rx="2" fill="#9333ea" />
-                      </g>
-
-                      {/* Checkmark particles */}
-                      <g className="animate-check-pop">
-                        <path
-                          d="M140 165 L165 190 L220 135"
-                          stroke="#10b981"
-                          strokeWidth="10"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          fill="none"
-                          opacity="0.9"
-                        />
-                      </g>
-
-                      {/* Sparkle effects */}
-                      <circle cx="240" cy="100" r="3" fill="#a855f7" className="animate-sparkle" opacity="0.8" />
-                      <circle cx="120" cy="250" r="2" fill="#a855f7" className="animate-sparkle-delay" opacity="0.6" />
-                      <circle cx="250" cy="240" r="2.5" fill="#a855f7" className="animate-sparkle" opacity="0.7" />
-                    </svg>
-                  </div>
+            {/* Right Column - Demo Video */}
+            <div className="hidden md:flex items-start justify-end pt-44 pl-8">
+              <div className="w-full flex flex-col">
+                <div className="video-container rounded-2xl overflow-hidden">
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover"
+                  >
+                    <source src="/videos/hero-loop-square.webm" type="video/webm" />
+                    <source src="/videos/hero-loop-square.mp4" type="video/mp4" />
+                  </video>
                 </div>
+                {/* Caption */}
+                <p className="text-center text-sm text-slate-500 mt-4">
+                  Scan → Verify → Done in seconds
+                </p>
               </div>
             </div>
           </div>
@@ -332,32 +226,36 @@ export default function Home() {
           <div className="space-y-4">
             {[
               {
-                q: "What is EUDI Wallet verification?",
-                a: "EUDI (EU Digital Identity) Wallet verification allows users to prove their identity, age, or residency using their official EU Digital Identity Wallet. It's part of the eIDAS 2.0 regulation being rolled out across all EU member states."
+                q: "What is an EUDI Wallet?",
+                a: "The EU Digital Identity Wallet is a government-issued mobile app that stores verified identity credentials like national ID, driving license, and professional qualifications. Under the eIDAS 2.0 regulation, all 27 EU member states must offer EUDI Wallets to citizens by 2026. This creates a standardized way to verify European identities digitally."
               },
               {
-                q: "How do I integrate WalletGate?",
-                a: "WalletGate provides both a REST API and TypeScript SDK. You can start verifying identities with just a few lines of code. Check our documentation at docs.walletgate.app for detailed integration guides."
+                q: "What checks can I perform?",
+                a: "WalletGate supports three verification types: age_over (verify if user is above a specified age without revealing birthdate), residency_eu (confirm EU residency status), and identity_verified (full identity verification). Each check returns a cryptographically signed boolean result from the user's official government credential."
+              },
+              {
+                q: "How does the verification flow work?",
+                a: "1) Your server calls our API to create a verification session. 2) We return a URL that renders as a QR code. 3) The user scans with their EUDI Wallet app. 4) They approve sharing the requested attributes. 5) Your server receives the cryptographically signed results via webhook or polling. The entire flow typically completes in under 30 seconds."
               },
               {
                 q: "What's the difference between test and live mode?",
-                a: "Test mode uses test API keys (starting with wg_test_) and doesn't charge you. It's perfect for development and testing. Live mode (wg_live_) processes real verifications and counts towards your plan's quota."
+                a: "Test mode uses simulated wallet responses — perfect for development without real credentials. Live mode connects to actual EU infrastructure. Test verifications are unlimited on all plans. Live verifications count against your monthly quota (100/mo on Free, 1,000/mo on Pro, 10,000/mo on Business)."
               },
               {
-                q: "Which countries are supported?",
-                a: "WalletGate supports all 27 EU member states plus EEA countries. We directly integrate with the official EU LOTL (List of Trusted Lists) infrastructure for maximum coverage and compliance."
+                q: "Is this GDPR compliant?",
+                a: "Yes. WalletGate is designed for GDPR compliance by default. We only process the minimum attributes you request (data minimization). No personal data is stored on our servers — verification results are delivered directly to your systems. All data in transit is encrypted with TLS 1.3."
               },
               {
-                q: "Is there a free trial?",
-                a: "Yes! You get 100 free test verifications per month with no credit card required. This gives you plenty of time to integrate and test before going live."
+                q: "What's the EU LOTL?",
+                a: "The List of Trusted Lists (LOTL) is the EU's official registry of qualified trust service providers and their certificates. WalletGate connects directly to the EU LOTL to verify that credentials are issued by legitimate, government-approved authorities."
               },
               {
-                q: "How secure is WalletGate?",
-                a: "WalletGate is built with enterprise security in mind: end-to-end encryption, zero-knowledge architecture, SOC 2 Type II certification, and full GDPR compliance. We never store user identity data."
+                q: "Do you support webhooks?",
+                a: "Yes. Pro and Business plans include webhook events for real-time notifications (verification.completed, verification.failed, verification.expired). All webhooks are signed with HMAC-SHA256 so you can verify authenticity."
               },
               {
-                q: "Do you offer AI-powered fraud detection?",
-                a: "Yes! WalletGate includes AI-powered anomaly detection with 5 ML algorithms monitoring 24/7 for velocity attacks, geographic anomalies, bot traffic, credential sharing, and suspicious patterns. Each verification gets an AI risk score with automated response recommendations."
+                q: "Which programming languages are supported?",
+                a: "WalletGate provides an official TypeScript/JavaScript SDK, plus REST API examples for Ruby, Go, Java, Python, PHP, and cURL. Any language that can make HTTP requests can integrate with WalletGate."
               }
             ].map((faq, index) => (
               <div key={index} className="border border-gray-200 rounded-lg bg-white overflow-hidden">
