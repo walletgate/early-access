@@ -1,0 +1,47 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#ffffff"/>
+
+  <!-- Subtle gradient background -->
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f9fafb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f3f4f6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg-gradient)"/>
+
+  <!-- Logo/Icon -->
+  <g transform="translate(100, 150)">
+    <rect width="80" height="80" rx="16" fill="#0D85C8"/>
+    <path d="M40 25v30m-10-20h20a5 5 0 015 5v10a5 5 0 01-5 5H30a5 5 0 01-5-5V40a5 5 0 015-5z"
+          stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Brand Name -->
+  <text x="200" y="200" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="48" font-weight="600" fill="#111827">
+    WalletGate
+  </text>
+
+  <!-- Headline -->
+  <text x="100" y="300" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="72" font-weight="700" fill="#111827">
+    EU Digital Identity,
+  </text>
+  <text x="100" y="380" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="72" font-weight="700" fill="#0D85C8">
+    made simple.
+  </text>
+
+  <!-- Subtitle -->
+  <text x="100" y="450" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="28" fill="#6B7280">
+    Developer-first SDK for privacy-preserving EUDI verification
+  </text>
+
+  <!-- Trust badges -->
+  <g transform="translate(100, 500)">
+    <text font-family="Inter, system-ui, -apple-system, sans-serif" font-size="20" font-weight="500" fill="#9CA3AF">
+      <tspan x="0">✓ EU-ready</tspan>
+      <tspan x="160">✓ eIDAS-aligned</tspan>
+      <tspan x="380">✓ Privacy-first</tspan>
+    </text>
+  </g>
+</svg>
