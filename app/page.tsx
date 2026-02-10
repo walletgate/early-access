@@ -56,12 +56,12 @@ export default function Home() {
             {/* Left Column - Content */}
             <div className="space-y-6 sm:space-y-8">
               <div className="space-y-4">
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight whitespace-normal md:whitespace-nowrap">
-                  EU Digital Identity,{' '}
-                  <span className="text-brand-600">made simple.</span>
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+                  Don't scramble when EUDI wallets launch.{' '}
+                  <span className="text-brand-600">Be ready.</span>
                 </h1>
-                <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed whitespace-normal md:whitespace-nowrap">
-                  Developer-first REST API and TypeScript SDK for privacy-preserving EUDI verification.
+                <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed">
+                  Integrate EU digital identity verification in 5 lines of code. Build with our sandbox today, go live the moment wallets launch across Europe. Zero user data stored.
                 </p>
               </div>
 
@@ -100,7 +100,7 @@ export default function Home() {
                       <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                       </svg>
-                      <p className="font-medium">Thanks — we'll keep you posted.</p>
+                      <p className="font-medium">Thanks, we'll keep you posted.</p>
                     </div>
                   </div>
                 ) : (
@@ -157,7 +157,7 @@ export default function Home() {
                         className="mt-1 w-4 h-4 text-brand-600 border-gray-300 rounded focus:ring-brand-600"
                       />
                       <span className="text-gray-600">
-                        I agree to be contacted about WalletGate updates. No spam—one or two emails max.
+                        I agree to be contacted about WalletGate updates. No spam, one or two emails max.
                       </span>
                     </label>
 
@@ -230,7 +230,7 @@ export default function Home() {
       {/* FAQ Section */}
       <section className="w-full py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 text-gray-900">
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-12 text-gray-900">
             Frequently Asked Questions
           </h2>
 
@@ -242,27 +242,27 @@ export default function Home() {
               },
               {
                 q: "What checks can I perform?",
-                a: "WalletGate supports three verification types: age_over (verify if user is above a specified age without revealing birthdate), residency_eu (confirm EU residency status), and identity_verified (full identity verification). Each check returns a cryptographically signed boolean result from the user's official government credential."
+                a: "WalletGate supports three verification types: age_over (verify if user is above a specified age without revealing birthdate), residency_eu (confirm EU residency status), and identity_verified (full identity verification). Each check returns a cryptographically signed boolean result from the user's official government credential, not self-reported data."
               },
               {
                 q: "How does the verification flow work?",
-                a: "1) Your server calls our API to create a verification session. 2) We return a URL that renders as a QR code. 3) The user scans with their EUDI Wallet app. 4) They approve sharing the requested attributes. 5) Your server receives the cryptographically signed results via webhook or polling. The entire flow typically completes in under 30 seconds."
+                a: "1) Your server calls our API to create a verification session with your required checks. 2) We return a URL that renders as a QR code. 3) The user scans the QR code with their EUDI Wallet app. 4) They review and approve sharing the requested attributes. 5) Your server receives the cryptographically signed results via webhook or polling. The entire flow typically completes in under 30 seconds."
               },
               {
                 q: "What's the difference between test and live mode?",
-                a: "Test mode uses simulated wallet responses — perfect for development without real credentials. Live mode connects to actual EU infrastructure. Test verifications are unlimited on all plans. Live verifications count against your monthly quota (100/mo on Free, 1,000/mo on Pro, 10,000/mo on Business)."
+                a: "Test mode uses simulated wallet responses, perfect for development and integration testing without real credentials. Live mode connects to actual EU infrastructure and verifies real EUDI Wallet credentials. Test verifications are unlimited on all plans. Live verifications count against your monthly quota (100/mo on Free, 1,000/mo on Pro, 10,000/mo on Business)."
+              },
+              {
+                q: "Do you store personal data?",
+                a: "No. WalletGate never stores personal identity data. We verify credentials and discard the data immediately. Verification results are delivered directly to your systems. You maintain full control over data retention in your own infrastructure."
               },
               {
                 q: "Is this GDPR compliant?",
-                a: "Yes. WalletGate is designed for GDPR compliance by default. We only process the minimum attributes you request (data minimization). No personal data is stored on our servers — verification results are delivered directly to your systems. All data in transit is encrypted with TLS 1.3."
+                a: "Yes. WalletGate is designed for GDPR compliance by default. We only process the minimum attributes you request (data minimization). No personal data is stored on our servers. Verification results are delivered directly to your systems. All data in transit is encrypted with TLS 1.3."
               },
               {
                 q: "What's the EU LOTL?",
-                a: "The List of Trusted Lists (LOTL) is the EU's official registry of qualified trust service providers and their certificates. WalletGate connects directly to the EU LOTL to verify that credentials are issued by legitimate, government-approved authorities."
-              },
-              {
-                q: "Do you support webhooks?",
-                a: "Yes. Pro and Business plans include webhook events for real-time notifications (verification.completed, verification.failed, verification.expired). All webhooks are signed with HMAC-SHA256 so you can verify authenticity."
+                a: "The List of Trusted Lists (LOTL) is the EU's official registry of qualified trust service providers and their certificates. It's maintained by the European Commission and is the authoritative source for validating eIDAS credentials. WalletGate connects directly to the EU LOTL to verify that credentials are issued by legitimate, government-approved authorities."
               },
               {
                 q: "Which programming languages are supported?",

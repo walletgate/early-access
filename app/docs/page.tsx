@@ -62,7 +62,7 @@ export default function DocsPage() {
             <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8 lg:p-12">
               {/* Getting Started */}
               <section id="getting-started" className="mb-16 scroll-mt-24">
-                <h1 className="text-4xl font-bold text-gray-900 mb-4">
+                <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
                   WalletGate EUDI SDK
                 </h1>
                 <p className="text-xl text-gray-600 mb-6">
