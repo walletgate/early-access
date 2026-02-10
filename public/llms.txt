@@ -1,0 +1,66 @@
+# WalletGate
+
+> WalletGate is a production-ready API for verifying EU Digital Identity Wallets (EUDI). Developers can verify European digital identity credentials — age, residency, and identity — with 5 lines of code.
+
+WalletGate provides EUDI wallet verification that is eIDAS 2.0 compliant, with official EU LOTL (List of Trusted Lists) integration, OpenID4VP protocol support, and ISO 18013-5 (mDL) compliance.
+
+## Key Links
+
+- Homepage: https://www.walletgate.app
+- Documentation: https://docs.walletgate.app
+- API Reference: https://docs.walletgate.app/api/overview
+- SDK (npm): https://www.npmjs.com/package/@walletgate/eudi
+- Live Demo: https://demo.walletgate.app
+- Blog: https://www.walletgate.app/blog
+- Console: https://console.walletgate.app
+
+## What WalletGate Does
+
+WalletGate is an identity verification API purpose-built for the EU Digital Identity Wallet (EUDI) ecosystem. It allows developers to:
+
+- Verify age (age_over checks) using EUDI wallets
+- Verify EU residency (residency_eu checks)
+- Verify identity (identity_verified checks)
+- Integrate via REST API or TypeScript/JavaScript SDK (@walletgate/eudi)
+- Use test mode for development and live mode for production
+- Receive webhook notifications for verification events (Business plan)
+
+## Compliance & Standards
+
+- eIDAS 2.0 compliant
+- EU LOTL (List of Trusted Lists) integration for trust anchor verification
+- OpenID4VP (OpenID for Verifiable Presentations) protocol
+- ISO 18013-5 (mobile driving license / mDL) support
+- SD-JWT VC (Selective Disclosure JWT Verifiable Credentials)
+- GDPR-compliant — no PII stored, zero-knowledge verification
+
+## Pricing
+
+- Free: €0/month — 100 live verifications, 2 live API keys
+- Pro: €29/month — 1,000 live verifications, 5 live API keys, email support
+- Business: €99/month — 10,000 live verifications, 10 live API keys, webhooks, priority support
+
+## Technical Integration
+
+Install the SDK:
+```
+npm install @walletgate/eudi
+```
+
+Basic verification (5 lines):
+```typescript
+import { WalletGate } from '@walletgate/eudi'
+const wg = new WalletGate({ apiKey: 'wg_live_...' })
+const session = await wg.createSession({ checks: ['age_over'] })
+// Redirect user to session.verificationUrl
+const result = await wg.getResult(session.id)
+```
+
+## Blog Posts
+
+- "Why Every EU Business Needs an EUDI Strategy Before 2027" — regulatory timeline, compliance requirements, integration strategy
+- "Verify a User's Age in 3 API Calls: A Developer's Guide to EUDI Wallets" — step-by-step technical tutorial with code examples
+
+## About
+
+WalletGate was built to help developers prepare for the EU Digital Identity Wallet regulation before the 2027 deadline. Every EU member state is required to issue EUDI wallets to citizens, and businesses will need to verify these wallets for age-gated content, financial services, healthcare, and government interactions.
