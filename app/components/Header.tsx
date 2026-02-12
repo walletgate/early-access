@@ -21,14 +21,17 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
-            <a href="https://docs.walletgate.app" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-gray-600 hover:text-gray-900 transition">
+            <a href="https://docs.walletgate.app" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-gray-600 hover:text-gray-900 transition inline-flex items-center gap-1">
               Docs
+              <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
             </a>
-            <a href="https://github.com/walletgate/eudi-sdk" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-gray-600 hover:text-gray-900 transition">
+            <a href="https://github.com/walletgate/eudi-sdk" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-gray-600 hover:text-gray-900 transition inline-flex items-center gap-1">
               GitHub
+              <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
             </a>
-            <a href="https://www.npmjs.com/package/@walletgate/eudi" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-gray-600 hover:text-gray-900 transition">
+            <a href="https://www.npmjs.com/package/@walletgate/eudi" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-gray-600 hover:text-gray-900 transition inline-flex items-center gap-1">
               npm
+              <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
             </a>
           </nav>
 
@@ -58,28 +61,31 @@ export default function Header() {
               href="https://docs.walletgate.app"
               target="_blank"
               rel="noopener noreferrer"
-              className="block py-2 text-sm font-medium text-gray-600 hover:text-gray-900 transition"
+              className="py-2 text-sm font-medium text-gray-600 hover:text-gray-900 transition flex items-center gap-1"
               onClick={() => setMobileMenuOpen(false)}
             >
               Docs
+              <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
             </a>
             <a
               href="https://github.com/walletgate/eudi-sdk"
               target="_blank"
               rel="noopener noreferrer"
-              className="block py-2 text-sm font-medium text-gray-600 hover:text-gray-900 transition"
+              className="py-2 text-sm font-medium text-gray-600 hover:text-gray-900 transition flex items-center gap-1"
               onClick={() => setMobileMenuOpen(false)}
             >
               GitHub
+              <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
             </a>
             <a
               href="https://www.npmjs.com/package/@walletgate/eudi"
               target="_blank"
               rel="noopener noreferrer"
-              className="block py-2 text-sm font-medium text-gray-600 hover:text-gray-900 transition"
+              className="py-2 text-sm font-medium text-gray-600 hover:text-gray-900 transition flex items-center gap-1"
               onClick={() => setMobileMenuOpen(false)}
             >
               npm
+              <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
             </a>
           </nav>
         )}
