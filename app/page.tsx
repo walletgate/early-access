@@ -199,6 +199,17 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </a>
+                <a
+                  href="https://docs.walletgate.app/hosted-verification"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center space-x-2 text-brand-600 font-medium hover:text-brand-700 transition"
+                >
+                  <span>Hosted verification page</span>
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </a>
               </div>
             </div>
 
@@ -227,6 +238,58 @@ export default function Home() {
         </div>
       </main>
 
+      {/* Features Section */}
+      <section className="w-full py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-4 text-gray-900">
+            Everything you need to verify European identities
+          </h2>
+          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+            From zero-code hosted pages to full API control, WalletGate adapts to your stack.
+          </p>
+          <div className="grid md:grid-cols-3 gap-6">
+            {/* Hosted Verification Page */}
+            <div className="bg-white border border-gray-200 rounded-xl p-6 sm:p-8">
+              <div className="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-5 h-5 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Hosted Verification Page</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                We handle the UI. Redirect users to our hosted page for QR scanning, wallet deep-linking, and real-time status updates. Zero frontend code required.
+              </p>
+            </div>
+
+            {/* Test Wallet Simulator */}
+            <div className="bg-white border border-gray-200 rounded-xl p-6 sm:p-8">
+              <div className="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-5 h-5 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Test Wallet Simulator</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Test your full verification flow end-to-end in sandbox mode. Our browser-based test wallet lets you approve or reject without a real EUDI Wallet.
+              </p>
+            </div>
+
+            {/* Webhooks */}
+            <div className="bg-white border border-gray-200 rounded-xl p-6 sm:p-8">
+              <div className="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-5 h-5 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Real-time Webhooks</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Get instant notifications when verifications complete, fail, or expire. HMAC-SHA256 signed payloads delivered to your endpoint. Available on Business plan.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <section className="w-full py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-3xl mx-auto">
@@ -246,7 +309,7 @@ export default function Home() {
               },
               {
                 q: "How does the verification flow work?",
-                a: "1) Your server calls our API to create a verification session with your required checks. 2) We return a URL that renders as a QR code. 3) The user scans the QR code with their EUDI Wallet app. 4) They review and approve sharing the requested attributes. 5) Your server receives the cryptographically signed results via webhook or polling. The entire flow typically completes in under 30 seconds."
+                a: "You have two options. Hosted Page (recommended): Create a session with successUrl and cancelUrl, then redirect your user to the hostedUrl we return. We handle the QR code, wallet deep-linking, and status polling — your user is redirected back with a signed token when done. Custom UI: Create a session, receive a verificationUrl, and render your own QR code. Poll the session status or use webhooks to get results. Both options complete in under 30 seconds. In test mode, a built-in Test Wallet Simulator lets developers approve or reject without a real EUDI Wallet."
               },
               {
                 q: "What's the difference between test and live mode?",
